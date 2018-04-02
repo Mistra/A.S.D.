@@ -1,0 +1,6 @@
+[package]
+name = "asd"
+version = "0.1.0"
+authors = ["Giulio M. <sperectrum@gmail.com>"]
+
+[dependencies]
