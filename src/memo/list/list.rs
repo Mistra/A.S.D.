@@ -1,10 +1,12 @@
+use super::iterator::IterList;
+
 pub struct List {
     head: Option<Box<Node>>,
 }
 
-struct Node {
-    elem: i32,
-    next: Option<Box<Node>>,
+pub struct Node {
+    pub elem: i32,
+    pub next: Option<Box<Node>>,
 }
 
 impl List {
@@ -29,15 +31,13 @@ impl List {
     }
 
     pub fn peek(&self) -> Option<&i32> {
-        /*self.head.as_ref().map(|node| {
+        self.head.as_ref().map(|node| {
             &node.elem
-        })*/
-        match self.head.as_ref() {
-            None => None,
-            Some(node) => {
-                Some(&node.elem)
-            }
-        }
+        })
+    }
+
+    pub fn iter(&self) -> IterList {
+        IterList::new(&self.head)
     }
 }
 

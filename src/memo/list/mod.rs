@@ -1,5 +1,4 @@
-mod tree;
 mod list;
+mod iterator;
 
-pub use self::tree::Tree;
 pub use self::list::List;
